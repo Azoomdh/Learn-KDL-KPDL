@@ -8,6 +8,7 @@ import java.util.Set;
 import com.example.demoKDLv1.Layer_Entity.MatHangDuocLuuTru.MatHangDuocLuuTru;
 import com.example.demoKDLv1.Layer_Entity.VanPhongDaiDien.VanPhongDaiDien;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,13 +25,14 @@ import lombok.Data;
 @Data
 public class CuaHang {
     
-    @Version
-    private Integer version;
+    // @Version
+    // private Integer version;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long maCH;
 
+    @Column(columnDefinition = "nvarchar(255)") // với SQL Server
     private String soDT;
     private Timestamp thoigianmoban;
 
@@ -54,13 +56,13 @@ public class CuaHang {
         this.vpdd = vpdd;
     }
 
-    public CuaHang(Integer version, Long maCH, String soDT, Timestamp thoigianmoban, VanPhongDaiDien vpdd) {
-        this.version = version;
-        this.maCH = maCH;
-        this.soDT = soDT;
-        this.thoigianmoban = thoigianmoban;
-        this.vpdd = vpdd;
-    }
+    // public CuaHang(Integer version, Long maCH, String soDT, Timestamp thoigianmoban, VanPhongDaiDien vpdd) {
+    //     this.version = version;
+    //     this.maCH = maCH;
+    //     this.soDT = soDT;
+    //     this.thoigianmoban = thoigianmoban;
+    //     this.vpdd = vpdd;
+    // }
 
     public CuaHang() {
         // ...

@@ -1,0 +1,61 @@
+CREATE TABLE Dim_VanPhong (
+    MaTP BIGINT PRIMARY KEY,
+    TenTP NVARCHAR(255),
+    Bang NVARCHAR(255),
+    DiaChiVP NVARCHAR(255)
+);
+
+CREATE TABLE Dim_KhachHang (
+    MaKH BIGINT PRIMARY KEY,
+    TenKH NVARCHAR(255),
+    LoaiKH NVARCHAR(255),
+    HuongDanVien NVARCHAR(255),
+    DiaChiBuuDien NVARCHAR(255),
+    MaTP BIGINT,
+    FOREIGN KEY (MaTP) REFERENCES Dim_VanPhong(MaTP)
+);
+
+CREATE TABLE Dim_MatHang (
+    MaMH BIGINT PRIMARY KEY,
+    MoTa NVARCHAR(255),
+    KichCo NVARCHAR(255),
+    TrongLuong FLOAT,
+    Gia_Current BIGINT
+);
+
+CREATE TABLE Dim_CuaHang (
+    MaCH BIGINT PRIMARY KEY,
+    SoDienThoai NVARCHAR(255),
+    MaTP BIGINT,
+    FOREIGN KEY (MaTP) REFERENCES Dim_VanPhong(MaTP)
+);
+
+CREATE TABLE Dim_ThoiGian (
+    MaTG BIGINT PRIMARY KEY,
+    Thang BIGINT,
+    Quy BIGINT,
+    Nam BIGINT
+);
+
+CREATE TABLE Fact_DatHang (
+    MaMH BIGINT,
+    MaKH BIGINT,
+    MaTG BIGINT,
+    SoLuongDat INT,
+    ThanhTien BIGINT,
+    FOREIGN KEY (MaMH) REFERENCES Dim_MatHang(MaMH),
+    FOREIGN KEY (MaKH) REFERENCES Dim_KhachHang(MaKH),
+    FOREIGN KEY (MaTG) REFERENCES Dim_ThoiGian(MaTG)
+);
+
+CREATE TABLE Fact_TonKho (
+    MaTG BIGINT,
+    MaMH BIGINT,
+    MaCH BIGINT,
+    SoLuongTrongKho INT,
+    FOREIGN KEY (MaTG) REFERENCES Dim_ThoiGian(MaTG),
+    FOREIGN KEY (MaMH) REFERENCES Dim_MatHang(MaMH),
+    FOREIGN KEY (MaCH) REFERENCES Dim_CuaHang(MaCH)
+);
+
+

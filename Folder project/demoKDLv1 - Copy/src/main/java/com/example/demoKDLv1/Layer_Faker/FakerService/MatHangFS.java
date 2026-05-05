@@ -44,4 +44,17 @@ public class MatHangFS {
 
         return listMathang;
     }
+
+    public List<MatHang> createMatHang_v2(Integer soLuong){
+        List<MatHang> listMathang= new ArrayList<>();
+
+        for(int i=0; i<soLuong; i++){
+            MatHang mh1 = MatHangFaker.createFakeMatHang(this.allEntityConfig);
+            listMathang.add(mh1);
+        }
+
+        listMathang = this.mathang_Service.createAllMathang(listMathang);
+
+        return listMathang;
+    }
 }

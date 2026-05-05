@@ -1,0 +1,15 @@
+CREATE TABLE dim_customer (id int IDENTITY NOT NULL, name varchar(255) NOT NULL, type varchar(255) NOT NULL, city int NOT NULL, PRIMARY KEY (id));
+CREATE TABLE dim_item (id int IDENTITY NOT NULL, description varchar(255) NULL, [size] varchar(255) NOT NULL, weight float(10) NOT NULL, price int NOT NULL, PRIMARY KEY (id));
+CREATE TABLE dim_location (id_city int IDENTITY NOT NULL, name_city varchar(255) NOT NULL, state int NOT NULL, office_address int NOT NULL, PRIMARY KEY (id_city));
+CREATE TABLE dim_store (id int IDENTITY NOT NULL, phone_number varchar(255) NULL, id_city int NOT NULL, PRIMARY KEY (id));
+CREATE TABLE dim_time (time_key int IDENTITY NOT NULL, month int NOT NULL, Quarter int NOT NULL, year int NOT NULL, PRIMARY KEY (time_key));
+CREATE TABLE fact_inventory (dim_timetime_key int NOT NULL, dim_itemid int NOT NULL, dim_storeid int NOT NULL, PRIMARY KEY (dim_timetime_key, dim_itemid, dim_storeid));
+CREATE TABLE fact_order (dim_customerid int NOT NULL, dim_locationid_city int NOT NULL, dim_timetime_key int NOT NULL, dim_itemid int NOT NULL, dim_storeid int NOT NULL, PRIMARY KEY (dim_customerid, dim_locationid_city, dim_timetime_key, dim_itemid, dim_storeid));
+ALTER TABLE fact_inventory ADD CONSTRAINT FKfact_inven313610 FOREIGN KEY (dim_storeid) REFERENCES dim_store (id);
+ALTER TABLE fact_inventory ADD CONSTRAINT FKfact_inven404512 FOREIGN KEY (dim_itemid) REFERENCES dim_item (id);
+ALTER TABLE fact_inventory ADD CONSTRAINT FKfact_inven637652 FOREIGN KEY (dim_timetime_key) REFERENCES dim_time (time_key);
+ALTER TABLE fact_order ADD CONSTRAINT FKfact_order190893 FOREIGN KEY (dim_storeid) REFERENCES dim_store (id);
+ALTER TABLE fact_order ADD CONSTRAINT FKfact_order62575 FOREIGN KEY (dim_itemid) REFERENCES dim_item (id);
+ALTER TABLE fact_order ADD CONSTRAINT FKfact_order829434 FOREIGN KEY (dim_timetime_key) REFERENCES dim_time (time_key);
+ALTER TABLE fact_order ADD CONSTRAINT FKfact_order260917 FOREIGN KEY (dim_locationid_city) REFERENCES dim_location (id_city);
+ALTER TABLE fact_order ADD CONSTRAINT FKfact_order338262 FOREIGN KEY (dim_customerid) REFERENCES dim_customer (id);

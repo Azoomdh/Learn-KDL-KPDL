@@ -1,6 +1,8 @@
 package com.example.demoKDLv1.Layer_Entity.MatHangDuocDat;
 
 
+import java.sql.Timestamp;
+
 import com.example.demoKDLv1.Layer_Entity.DonDatHang.DonDatHang;
 import com.example.demoKDLv1.Layer_Entity.MatHang.MatHang;
 
@@ -11,15 +13,19 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
 import jakarta.persistence.Version;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class MatHangDuocDat {
 
-    @Version
-    private Integer version;
+    // @Version
+    // private Integer version;
 
     @EmbeddedId
     private MatHangDuocDat_Key mhddKey= new MatHangDuocDat_Key();
@@ -42,25 +48,28 @@ public class MatHangDuocDat {
 
     private Long giadat;
 
-    public MatHangDuocDat(DonDatHang donDatHang, MatHang matHang, Integer soluongdat, Long giadat) {
+    private Timestamp thoigiandat;
+
+    public MatHangDuocDat(DonDatHang donDatHang, MatHang matHang, Integer soluongdat, Long giadat, Timestamp thoigiandat) {
         this.mhddKey= new MatHangDuocDat_Key();
         this.setDonDatHang(donDatHang);
         this.setMatHang(matHang);
         this.soluongdat = soluongdat;
         this.giadat = giadat;
+        this.thoigiandat = thoigiandat;
     }
 
-    public MatHangDuocDat(Integer version, DonDatHang donDatHang, MatHang matHang, Integer soluongdat, Long giadat) {
-        this.version = version;
-        this.donDatHang = donDatHang;
-        this.matHang = matHang;
-        this.soluongdat = soluongdat;
-        this.giadat = giadat;
-    }
+    // public MatHangDuocDat(Integer version, DonDatHang donDatHang, MatHang matHang, Integer soluongdat, Long giadat) {
+    //     this.version = version;
+    //     this.donDatHang = donDatHang;
+    //     this.matHang = matHang;
+    //     this.soluongdat = soluongdat;
+    //     this.giadat = giadat;
+    // }
 
-    public MatHangDuocDat() {
-        // ...
-    }
+    // public MatHangDuocDat() {
+    //     // ...
+    // }
 
     public void updateNotId(MatHangDuocDat mhdd2){
         // this.setDonDatHang(this.getDonDatHang());

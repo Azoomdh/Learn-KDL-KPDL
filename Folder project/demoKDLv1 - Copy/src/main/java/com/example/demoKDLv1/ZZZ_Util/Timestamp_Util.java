@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Timestamp_Util{
-    private static String timeFormat= "dd:MM:yyyy HH:mm:ss";
+    public static String timeFormat= "dd:MM:yyyy HH:mm:ss";
 
     public static Date convertString2DateUtils(String time){
         try {

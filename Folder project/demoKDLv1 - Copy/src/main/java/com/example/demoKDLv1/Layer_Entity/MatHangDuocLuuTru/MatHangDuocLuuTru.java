@@ -19,8 +19,8 @@ import lombok.Data;
 @Data
 public class MatHangDuocLuuTru {
     
-    @Version
-    private Integer version;
+    // @Version
+    // private Integer version;
 
     @EmbeddedId
     private MatHangDuocLuuTru_Key mhdltKey= new MatHangDuocLuuTru_Key();
@@ -46,14 +46,14 @@ public class MatHangDuocLuuTru {
         // ...
     }
 
-    public MatHangDuocLuuTru(Integer version, CuaHang cuaHang, MatHang matHang, Integer soluongtrongkho,
-            Timestamp thoigianluutru) {
-        this.version = version;
-        this.cuaHang = cuaHang;
-        this.matHang = matHang;
-        this.soluongtrongkho = soluongtrongkho;
-        this.thoigianluutru = thoigianluutru;
-    }
+    // public MatHangDuocLuuTru(Integer version, CuaHang cuaHang, MatHang matHang, Integer soluongtrongkho,
+    //         Timestamp thoigianluutru) {
+    //     this.version = version;
+    //     this.cuaHang = cuaHang;
+    //     this.matHang = matHang;
+    //     this.soluongtrongkho = soluongtrongkho;
+    //     this.thoigianluutru = thoigianluutru;
+    // }
 
     public MatHangDuocLuuTru(CuaHang cuaHang, MatHang matHang, Integer soluongtrongkho, Timestamp thoigianluutru) {
         this.mhdltKey= new MatHangDuocLuuTru_Key();

@@ -1,0 +1,64 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\azoom\\OneDrive\\Documents\\File ptit\\Kho DL\\Folder project\\BackendWebApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E268FCA2-1FEE-4350-B520-A1195427A9C4}|BackendWebApplication1\\BackendWebApplication1.csproj|c:\\users\\azoom\\onedrive\\documents\\file ptit\\kho dl\\folder project\\backendwebapplication1\\backendwebapplication1\\backendwebapplication1.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{E268FCA2-1FEE-4350-B520-A1195427A9C4}|BackendWebApplication1\\BackendWebApplication1.csproj|solutionrelative:backendwebapplication1\\backendwebapplication1.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E268FCA2-1FEE-4350-B520-A1195427A9C4}|BackendWebApplication1\\BackendWebApplication1.csproj|c:\\users\\azoom\\onedrive\\documents\\file ptit\\kho dl\\folder project\\backendwebapplication1\\backendwebapplication1\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E268FCA2-1FEE-4350-B520-A1195427A9C4}|BackendWebApplication1\\BackendWebApplication1.csproj|solutionrelative:backendwebapplication1\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BackendWebApplication1.http",
+              "DocumentMoniker": "C:\\Users\\azoom\\OneDrive\\Documents\\File ptit\\Kho DL\\Folder project\\BackendWebApplication1\\BackendWebApplication1\\BackendWebApplication1.http",
+              "RelativeDocumentMoniker": "BackendWebApplication1\\BackendWebApplication1.http",
+              "ToolTip": "C:\\Users\\azoom\\OneDrive\\Documents\\File ptit\\Kho DL\\Folder project\\BackendWebApplication1\\BackendWebApplication1\\BackendWebApplication1.http",
+              "RelativeToolTip": "BackendWebApplication1\\BackendWebApplication1.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-04-19T18:37:14.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\azoom\\OneDrive\\Documents\\File ptit\\Kho DL\\Folder project\\BackendWebApplication1\\BackendWebApplication1\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "BackendWebApplication1\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\azoom\\OneDrive\\Documents\\File ptit\\Kho DL\\Folder project\\BackendWebApplication1\\BackendWebApplication1\\WeatherForecast.cs",
+              "RelativeToolTip": "BackendWebApplication1\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T18:36:05.994Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 192,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

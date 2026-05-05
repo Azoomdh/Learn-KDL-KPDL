@@ -1,0 +1,37 @@
+<AnalysisServicesUserConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>DemoKDLv2</Id>
+            <Name>DemoKDLv2</Name>
+          </ConfigurationSetting>
+          <ConfigurationSetting>
+            <Id>Demo KD Lv2</Id>
+            <Name>Demo KD Lv2</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANTVfjduAEE6aCLb0iXjA5wAAAAAYAAAARABlAG0AbwAgAEsARAAgAEwAdgAyAAAAEGYAAAABAAAgAAAA18kwcfS8dN238qCvsVrA9Ce+9UDWh8LX+ZZdGycDRVkAAAAADoAAAAACAAAgAAAAfJHWcimyT1WI1PKOTdCsupN4NHh4o4UfIZcF6F7o5sYQAAAAEZfcgpliYAI9YbdZv6E4X0AAAACoacXetqQuZFkVc9NTKdC5NIDeNx+Pz4osq6UUolMoI1x3xG7uYU4YKJ/dLolK7g2izf2IRHDNX9gmDMWwAZcK</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>DemoKDLv2</Id>
+            <Name>DemoKDLv2</Name>
+          </ConfigurationSetting>
+          <ConfigurationSetting>
+            <Id>Demo KD Lv2</Id>
+            <Name>Demo KD Lv2</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANTVfjduAEE6aCLb0iXjA5wAAAAAYAAAARABlAG0AbwAgAEsARAAgAEwAdgAyAAAAEGYAAAABAAAgAAAA0ATMuEKK0Tb+auYebNN0g6OZ618+H41+GucqM8MJ0yQAAAAADoAAAAACAAAgAAAAw6RexrlRhtiAdBGM1CnvLV2uU7hrh3yFzqPSijKnRnsQAAAAwWdpHrAYzUksK9t6NwgnlUAAAAAgHXzmhGq5JyVRvC0z/ebW9kwXMJ3gy0+RDsUX4IrnUQiBwvcsdezWrehR20pSs43O/QXLKjLUJXgdzvAW3kDb</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
+        <TargetServer>localhost</TargetServer>
+        <TargetDatabase>MultidimensionalProject1</TargetDatabase>
+        <StartObject>
+          <ObjectId></ObjectId>
+          <ObjectType>Current</ObjectType>
+        </StartObject>
+      </Options>
+    </Configuration>
+  </Configurations>
+</AnalysisServicesUserConfiguration>

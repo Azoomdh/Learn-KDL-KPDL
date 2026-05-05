@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="AZOO.DemoKDLv2.a0000"
+  DTS:DTSID="{3D9EFE61-99B0-43EA-967C-F40686F27F46}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=AZOO;User ID=a0000;Initial Catalog=DemoKDLv2;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Integration Services Project1-{3D9EFE61-99B0-43EA-967C-F40686F27F46}AZOO.DemoKDLv2.a0000;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANTVfjduAEE6aCLb0iXjA5wAAAAACAAAAAAAQZgAAAAEAACAAAADH+UDfc+CVM0U9OvQ5YaUZYCwVCOygxv+3ySPyJtLLeQAAAAAOgAAAAAIAACAAAACUeR4yHC2Xp93ZhSFeAVS+MD0a4r7B4LCquOekNF+cF4AAAACXqGI9a2eoz1HetXySV26DDOiYRX5EBNIscGke3u83318kA3+ayuei3wkWn+FBnEU9d16PwYEAEdMUf+2kvKx1b9TBei2bvfkSJ/dYuEJIc7eph3fzZPeOBF8681f63fyX+ODt/3VdsdsZSLJnV/fQhxxQwysPaMn2XaVR6T/N/EAAAAAZkzQYUrLVr85cxknLoA/YigXRjVYO5Yt8P1/KOffDzWbCuDPq67ZSuQ42nnxIhbLt9JK9nMARn0TjXAJH2aQ1</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

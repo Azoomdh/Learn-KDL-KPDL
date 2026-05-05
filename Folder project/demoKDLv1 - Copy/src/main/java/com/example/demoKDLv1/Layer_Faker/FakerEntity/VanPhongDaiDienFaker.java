@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 import com.example.demoKDLv1.Layer_Entity.VanPhongDaiDien.VanPhongDaiDien;
 import com.example.demoKDLv1.Layer_Faker.ConfigFaker.EntityConfig.AllEntityConfig;
+import com.example.demoKDLv1.ZZZ_Util.AddressCustomObject;
 import com.example.demoKDLv1.ZZZ_Util.Faker_Util;
 
 import lombok.Data;
@@ -25,6 +26,7 @@ public class VanPhongDaiDienFaker {
         diachivanphong = address1.fullAddress();
         bang = address1.state();
         thoigianlapvanphong = allEntityConfig.getVpdd().getThoigianlapvanphong().getGiaTri();
+
 
         VanPhongDaiDien vpdd1= new VanPhongDaiDien(maTP, tenTP, diachivanphong, bang, thoigianlapvanphong);
 

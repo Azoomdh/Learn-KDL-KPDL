@@ -24,8 +24,8 @@ import lombok.Data;
 @Data
 public class DonDatHang {
 
-    @Version
-    private Integer version;
+    // @Version
+    // private Integer version;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,6 +41,7 @@ public class DonDatHang {
     @JoinColumn(name = "makh")
     KhachHang khachHang;
     // 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 
+    
     private Timestamp ngaydathang;
     
     
@@ -59,12 +60,12 @@ public class DonDatHang {
             this.ngaydathang = ngaydathang;
         }
 
-    public DonDatHang(Integer version, Long madon, KhachHang khachHang, Timestamp ngaydathang) {
-        this.version = version;
-        this.madon = madon;
-        this.khachHang = khachHang;
-        this.ngaydathang = ngaydathang;
-    }
+    // public DonDatHang(Integer version, Long madon, KhachHang khachHang, Timestamp ngaydathang) {
+    //     this.version = version;
+    //     this.madon = madon;
+    //     this.khachHang = khachHang;
+    //     this.ngaydathang = ngaydathang;
+    // }
 
     public void updateNotId(DonDatHang ddh2 ){
         // this.setMadon(this.getMadon());

@@ -33,12 +33,18 @@ public class CuaHangFS {
 
         ch1 = this.ch_Service.createCuaHang(ch1);
 
+        // List<MatHangDuocLuuTru> listMhdlt = 
+        //     this.mhdlt_FS.createMhdlt(
+        //         ch1, 
+        //         this.allEntityConfig.getCuahang().getSoMhdlt().getGiaTri()
+        //     );
+        
         List<MatHangDuocLuuTru> listMhdlt = 
-            this.mhdlt_FS.createMhdlt(
-                ch1, 
+            this.mhdlt_FS.createMhdlt_v2(
+                ch1,
                 this.allEntityConfig.getCuahang().getSoMhdlt().getGiaTri()
             );
-        
+
         return ch1;
     }
 

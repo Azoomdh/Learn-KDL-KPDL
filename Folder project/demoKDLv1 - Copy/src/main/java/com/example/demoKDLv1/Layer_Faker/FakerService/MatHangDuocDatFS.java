@@ -50,4 +50,15 @@ public class MatHangDuocDatFS {
 
         return listMhdd;
     }
+
+    public List<MatHangDuocDat> createMhdd_v2(DonDatHang ddh1, Integer soLuong){
+
+        List<MatHang> listMh = this.mh_Service.getRandomMathang(soLuong);
+
+        List<MatHangDuocDat> listMhdd = MatHangDuocDatFaker.createFakeMhdd(ddh1, listMh, allEntityConfig);
+
+        listMhdd = this.mhdd_Service.createAllMhdd(listMhdd);
+
+        return listMhdd;
+    }
 }

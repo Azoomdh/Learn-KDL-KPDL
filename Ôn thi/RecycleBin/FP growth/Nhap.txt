@@ -1,0 +1,153 @@
+https://www.philippe-fournier-viger.com/spmf/FPGrowth.php
+https://www.philippe-fournier-viger.com/spmf/fpgrowth_04.pdf
+
+// *****************************************
+
+Algorithm 1 (FP-tree construction).
+Input: A transaction database DB and a minimum support threshold ξ .
+Output: FP-tree, the frequent-pattern tree of DB.
+Method: The FP-tree is constructed as follows.
+
+1. Scan the transaction database DB once. 
+    Collect F, 
+        the set of frequent items, 
+        and the support of each frequent item. 
+        Sort F in support-descending order as FList, the list of frequent items.
+
+2. Create the root of an FP-tree, T , and label it as “null”. 
+    For each transaction Trans in DB do the following. {
+        Select the frequent items in Trans and sort them according to the order of FList. 
+        Let the sorted frequent-item list in Trans be [p | P], 
+            where p is the first element 
+            and P is the remaining list. 
+        
+        Call insert tree([p | P], T ).
+    }
+
+    The function insert tree([p | P], T ) is performed as follows. {
+        If T has a child N such that N.item-name = p.item-name, then 
+            increment N’s count by 1; 
+        else {
+            create a new node N, 
+            with its count initialized to 1, 
+            its parent link linked to T , 
+            and its node-link linked to the nodes with the same item-name via the node-link structure. 
+        }
+        If P is nonempty, {
+            call insert tree(P, N) recursively
+        }
+    }
+// *****************************************
+
+Thuật toán 1 (Xây dựng cây FP).
+
+Đầu vào: Cơ sở dữ liệu giao dịch DB và ngưỡng hỗ trợ tối thiểu ξ.
+Đầu ra: Cây FP, cây mẫu thường xuyên của DB.
+Phương pháp: Cây FP được xây dựng như sau:
+
+1. Quét cơ sở dữ liệu giao dịch DB một lần. 
+    Thu thập F, 
+        tập hợp các mục thường xuyên, và mức hỗ trợ của mỗi mục thường xuyên. 
+        Sắp xếp F theo thứ tự giảm dần mức hỗ trợ thành FList, danh sách các mục thường xuyên.
+
+2. Tạo gốc của cây FP, T, và gán nhãn là “null”. 
+    Đối với mỗi giao dịch Trans trong DB, thực hiện như sau: {
+        Chọn các mục thường xuyên trong Trans và sắp xếp chúng theo thứ tự của FList. 
+        Gọi danh sách các mục thường xuyên đã được sắp xếp trong Trans là [p | P], 
+            trong đó p là phần tử đầu tiên 
+            và P là danh sách còn lại. 
+        Gọi hàm insert tree([p | P], T).
+    }
+
+    Hàm insert tree([p | P], T) được thực hiện như sau. {
+        if T có một nút con N sao cho N.item-name = p.item-name, thì { 
+            tăng số đếm của N lên 1; 
+        }
+        else , { 
+            tạo một nút mới N, 
+            với số đếm được khởi tạo là 1, 
+            liên kết cha của nó được liên kết với T, 
+            và liên kết nút của nó được liên kết với các nút có cùng tên mục thông qua cấu trúc liên kết nút. 
+        }
+        Nếu P không rỗng, {
+            hãy gọi insert tree(P, N) một cách đệ quy
+        }
+    }
+// *****************************************
+
+Procedure FP-growth(Tree, α) {
+    (1) if Tree contains a single prefix path (2) then { 
+        // Mining single prefix-path FP-tree
+        (3) let P be the single prefix-path part of Tree;
+        (4) let Q be the multipath part with the top branching node replaced by a null root;
+
+        (5) for each combination (denoted as β) of the nodes in the path P do {
+            (6) generate pattern β ∪ α with support = minimum support of nodes in β;
+        }
+
+        (7) let freq pattern set(P) be the set of patterns so generated; 
+    }
+    (8) else { 
+        let Q be Tree;
+    }
+
+    (9) for each item ai in Q do { 
+        // Mining multipath FP-tree
+        (10) generate pattern β = ai ∪ α with support = ai .support;
+        (11) construct β’s conditional pattern-base and then β’s conditional FP-tree Treeβ ;
+        (12) if Treeβ = ∅ {
+            (13) then call FP-growth(Treeβ , β);
+        }
+        (14) let freq pattern set(Q) be the set of patterns so generated; 
+    }
+    (15) return(
+        freq pattern set(P) 
+        ∪ 
+        freq pattern set(Q) 
+        ∪ 
+        ( freq pattern set(P) × freq pattern set(Q) )
+    )
+}
+
+// ***************************************
+
+Thủ tục FP-growth(Tree, α) {
+
+    (1) nếu Tree chứa một đường dẫn tiền tố duy nhất (2) thì { 
+        // Khai thác cây FP đường dẫn tiền tố đơn
+        (3) gọi P là phần đường dẫn tiền tố đơn của Tree;
+        (4) gọi Q là phần đa đường dẫn với nút phân nhánh trên cùng được thay thế bằng gốc rỗng;
+
+        (5) với mỗi tổ hợp (ký hiệu là β) của các nút trong đường dẫn P thì thực hiện {
+            (6) tạo mẫu β ∪ α với độ hỗ trợ = độ hỗ trợ tối thiểu của các nút trong β;
+        }
+        
+        (7) gọi freq pattern set(P) là tập hợp các mẫu được tạo ra;
+    }
+
+    (8) else {
+        gọi Q là Tree;
+    }
+
+    (9) với mỗi mục a_i trong Q thì thực hiện { 
+        // Khai thác cây FP đa đường dẫn
+        (10) tạo mẫu β = a_i ∪ α với độ hỗ trợ = a_i.support;
+        (11) xây dựng cơ sở mẫu có điều kiện của β và sau đó là cây FP có điều kiện của β Treeβ;
+        (12) nếu Treeβ = ∅ {
+            (13) thì gọi FP-growth(Treeβ , β);
+        }
+        (14) đặt freq pattern set(Q) là tập hợp các mẫu được tạo ra;
+    }
+
+    (15) trả về (
+        freq pattern set(P) 
+        ∪ 
+        freq pattern set(Q) 
+        ∪ 
+        ( 
+            freq pattern set(P) 
+            × 
+            freq pattern set(Q) 
+        )
+    )
+}

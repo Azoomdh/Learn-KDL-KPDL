@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 import com.example.demoKDLv1.Layer_Entity.MatHang.MatHang;
 import com.example.demoKDLv1.Layer_Faker.ConfigFaker.EntityConfig.AllEntityConfig;
+import com.example.demoKDLv1.ZZZ_Util.Faker_Util;
 
 import lombok.Data;
 import net.datafaker.Faker;
@@ -19,8 +20,10 @@ public class MatHangFaker {
         Long gia= null;
         Timestamp thoigiannhaphang= null;
 
-        Faker faker1= new Faker();
-        Commerce sanpham1= faker1.commerce();
+        // Faker faker1= new Faker();
+        // Commerce sanpham1= faker1.commerce();
+
+        Commerce sanpham1 = Faker_Util.getSanpham();
 
         maMH = null;
         mota = sanpham1.productName();

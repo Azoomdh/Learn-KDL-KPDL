@@ -1,0 +1,308 @@
+USE [master]
+GO
+/****** Object:  Database [DemoKDLv1]    Script Date: 17-Apr-26 8:57:22 PM ******/
+CREATE DATABASE [DemoKDLv1]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'DemoKDLv1', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA\DemoKDLv1.mdf' , SIZE = 73728KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'DemoKDLv1_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA\DemoKDLv1_log.ldf' , SIZE = 139264KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+GO
+ALTER DATABASE [DemoKDLv1] SET COMPATIBILITY_LEVEL = 160
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [DemoKDLv1].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [DemoKDLv1] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [DemoKDLv1] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [DemoKDLv1] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [DemoKDLv1] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [DemoKDLv1] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET RECOVERY FULL 
+GO
+ALTER DATABASE [DemoKDLv1] SET  MULTI_USER 
+GO
+ALTER DATABASE [DemoKDLv1] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [DemoKDLv1] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [DemoKDLv1] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [DemoKDLv1] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [DemoKDLv1] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [DemoKDLv1] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'DemoKDLv1', N'ON'
+GO
+ALTER DATABASE [DemoKDLv1] SET QUERY_STORE = ON
+GO
+ALTER DATABASE [DemoKDLv1] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 30), DATA_FLUSH_INTERVAL_SECONDS = 900, INTERVAL_LENGTH_MINUTES = 60, MAX_STORAGE_SIZE_MB = 1000, QUERY_CAPTURE_MODE = AUTO, SIZE_BASED_CLEANUP_MODE = AUTO, MAX_PLANS_PER_QUERY = 200, WAIT_STATS_CAPTURE_MODE = ON)
+GO
+USE [DemoKDLv1]
+GO
+/****** Object:  Table [dbo].[cua_hang]    Script Date: 17-Apr-26 8:57:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[cua_hang](
+	[mach] [bigint] IDENTITY(1,1) NOT NULL,
+	[sodt] [nvarchar](255) NULL,
+	[thoigianmoban] [datetime2](6) NULL,
+	[matp] [bigint] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[mach] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[don_dat_hang]    Script Date: 17-Apr-26 8:57:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[don_dat_hang](
+	[madon] [bigint] IDENTITY(1,1) NOT NULL,
+	[ngaydathang] [datetime2](6) NULL,
+	[makh] [bigint] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[madon] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[khach_hang]    Script Date: 17-Apr-26 8:57:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[khach_hang](
+	[makh] [bigint] IDENTITY(1,1) NOT NULL,
+	[ngaydathangdautien] [datetime2](6) NULL,
+	[tenkh] [nvarchar](255) NULL,
+	[matp] [bigint] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[makh] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[khach_hang_buu_dien]    Script Date: 17-Apr-26 8:57:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[khach_hang_buu_dien](
+	[diachibuudien] [nvarchar](255) NULL,
+	[makh] [bigint] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[makh] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[khach_hang_du_lich]    Script Date: 17-Apr-26 8:57:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[khach_hang_du_lich](
+	[huongdanviendulich] [nvarchar](255) NULL,
+	[makh] [bigint] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[makh] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mat_hang]    Script Date: 17-Apr-26 8:57:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mat_hang](
+	[mamh] [bigint] IDENTITY(1,1) NOT NULL,
+	[gia] [bigint] NULL,
+	[mota] [nvarchar](255) NULL,
+	[size] [nvarchar](255) NULL,
+	[thoigiannhaphang] [datetime2](6) NULL,
+	[trongluong] [float] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[mamh] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mat_hang_duoc_dat]    Script Date: 17-Apr-26 8:57:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mat_hang_duoc_dat](
+	[giadat] [bigint] NULL,
+	[soluongdat] [int] NULL,
+	[madon] [bigint] NOT NULL,
+	[mamh] [bigint] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[madon] ASC,
+	[mamh] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mat_hang_duoc_luu_tru]    Script Date: 17-Apr-26 8:57:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mat_hang_duoc_luu_tru](
+	[soluongtrongkho] [int] NULL,
+	[thoigianluutru] [datetime2](6) NULL,
+	[mach] [bigint] NOT NULL,
+	[mamh] [bigint] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[mach] ASC,
+	[mamh] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ten_pho]    Script Date: 17-Apr-26 8:57:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ten_pho](
+	[ma_pho] [bigint] IDENTITY(1,1) NOT NULL,
+	[ten_pho] [nvarchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ma_pho] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ten_xa]    Script Date: 17-Apr-26 8:57:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ten_xa](
+	[ma_xa] [bigint] IDENTITY(1,1) NOT NULL,
+	[ten_tinh] [nvarchar](255) NULL,
+	[ten_xa] [nvarchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ma_xa] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[van_phong_dai_dien]    Script Date: 17-Apr-26 8:57:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[van_phong_dai_dien](
+	[matp] [bigint] IDENTITY(1,1) NOT NULL,
+	[bang] [nvarchar](255) NULL,
+	[diachivanphong] [nvarchar](255) NULL,
+	[tentp] [nvarchar](255) NULL,
+	[thoigianlapvanphong] [datetime2](6) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[matp] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[cua_hang]  WITH CHECK ADD  CONSTRAINT [FK38ypdeyktspcwjb4cmy81pg19] FOREIGN KEY([matp])
+REFERENCES [dbo].[van_phong_dai_dien] ([matp])
+GO
+ALTER TABLE [dbo].[cua_hang] CHECK CONSTRAINT [FK38ypdeyktspcwjb4cmy81pg19]
+GO
+ALTER TABLE [dbo].[don_dat_hang]  WITH CHECK ADD  CONSTRAINT [FK7f7o8batqftxfciqjvmqj50ep] FOREIGN KEY([makh])
+REFERENCES [dbo].[khach_hang] ([makh])
+GO
+ALTER TABLE [dbo].[don_dat_hang] CHECK CONSTRAINT [FK7f7o8batqftxfciqjvmqj50ep]
+GO
+ALTER TABLE [dbo].[khach_hang]  WITH CHECK ADD  CONSTRAINT [FKapf1elean7ysac9on42beh8su] FOREIGN KEY([matp])
+REFERENCES [dbo].[van_phong_dai_dien] ([matp])
+GO
+ALTER TABLE [dbo].[khach_hang] CHECK CONSTRAINT [FKapf1elean7ysac9on42beh8su]
+GO
+ALTER TABLE [dbo].[khach_hang_buu_dien]  WITH CHECK ADD  CONSTRAINT [FKtkd1sv2udrsdllrmjxa27suwb] FOREIGN KEY([makh])
+REFERENCES [dbo].[khach_hang] ([makh])
+GO
+ALTER TABLE [dbo].[khach_hang_buu_dien] CHECK CONSTRAINT [FKtkd1sv2udrsdllrmjxa27suwb]
+GO
+ALTER TABLE [dbo].[khach_hang_du_lich]  WITH CHECK ADD  CONSTRAINT [FKapthsa0l4j3nfubbh8lmgmcpj] FOREIGN KEY([makh])
+REFERENCES [dbo].[khach_hang] ([makh])
+GO
+ALTER TABLE [dbo].[khach_hang_du_lich] CHECK CONSTRAINT [FKapthsa0l4j3nfubbh8lmgmcpj]
+GO
+ALTER TABLE [dbo].[mat_hang_duoc_dat]  WITH CHECK ADD  CONSTRAINT [FK1fhxkx0mm215b3cxp50fhshlp] FOREIGN KEY([madon])
+REFERENCES [dbo].[don_dat_hang] ([madon])
+GO
+ALTER TABLE [dbo].[mat_hang_duoc_dat] CHECK CONSTRAINT [FK1fhxkx0mm215b3cxp50fhshlp]
+GO
+ALTER TABLE [dbo].[mat_hang_duoc_dat]  WITH CHECK ADD  CONSTRAINT [FKa7jaiap0cy55s4ju9ab0xb70h] FOREIGN KEY([mamh])
+REFERENCES [dbo].[mat_hang] ([mamh])
+GO
+ALTER TABLE [dbo].[mat_hang_duoc_dat] CHECK CONSTRAINT [FKa7jaiap0cy55s4ju9ab0xb70h]
+GO
+ALTER TABLE [dbo].[mat_hang_duoc_luu_tru]  WITH CHECK ADD  CONSTRAINT [FKi3qrhnfdqpookh5ygpejqvnj3] FOREIGN KEY([mach])
+REFERENCES [dbo].[cua_hang] ([mach])
+GO
+ALTER TABLE [dbo].[mat_hang_duoc_luu_tru] CHECK CONSTRAINT [FKi3qrhnfdqpookh5ygpejqvnj3]
+GO
+ALTER TABLE [dbo].[mat_hang_duoc_luu_tru]  WITH CHECK ADD  CONSTRAINT [FKqdjpuf03r2j0rd166u95ma7si] FOREIGN KEY([mamh])
+REFERENCES [dbo].[mat_hang] ([mamh])
+GO
+ALTER TABLE [dbo].[mat_hang_duoc_luu_tru] CHECK CONSTRAINT [FKqdjpuf03r2j0rd166u95ma7si]
+GO
+USE [master]
+GO
+ALTER DATABASE [DemoKDLv1] SET  READ_WRITE 
+GO

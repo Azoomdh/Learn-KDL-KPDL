@@ -29,7 +29,7 @@ public class MatHangFC {
             @RequestParam("soLuong") Integer soLuong1
         )
         {
-            this.mh_FS.createMatHang(soLuong1);
+            this.mh_FS.createMatHang_v2(soLuong1);
             return "redirect:/Faker";
         }
 }

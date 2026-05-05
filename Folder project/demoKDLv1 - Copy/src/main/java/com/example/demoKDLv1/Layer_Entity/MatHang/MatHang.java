@@ -7,6 +7,7 @@ import java.util.Set;
 import com.example.demoKDLv1.Layer_Entity.MatHangDuocDat.MatHangDuocDat;
 import com.example.demoKDLv1.Layer_Entity.MatHangDuocLuuTru.MatHangDuocLuuTru;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,15 +22,17 @@ import lombok.Data;
 @Data
 public class MatHang {
 
-    @Version
-    private Integer version;
+    // @Version
+    // private Integer version;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long maMH;
 
+    @Column(columnDefinition = "nvarchar(255)") // với SQL Server
     private String mota;
 
+    @Column(columnDefinition = "nvarchar(255)") // với SQL Server
     private String size;
 
     private Double trongluong;
@@ -61,16 +64,16 @@ public class MatHang {
         // ...
     }
 
-    public MatHang(Integer version, Long maMH, String mota, String size, Double trongluong, Long gia,
-            Timestamp thoigiannhaphang) {
-        this.version = version;
-        this.maMH = maMH;
-        this.mota = mota;
-        this.size = size;
-        this.trongluong = trongluong;
-        this.gia = gia;
-        this.thoigiannhaphang = thoigiannhaphang;
-    }
+    // public MatHang(Integer version, Long maMH, String mota, String size, Double trongluong, Long gia,
+    //         Timestamp thoigiannhaphang) {
+    //     this.version = version;
+    //     this.maMH = maMH;
+    //     this.mota = mota;
+    //     this.size = size;
+    //     this.trongluong = trongluong;
+    //     this.gia = gia;
+    //     this.thoigiannhaphang = thoigiannhaphang;
+    // }
 
     public void updateNotId(MatHang mh2){
         // this.setMaMH(this.getMaMH());

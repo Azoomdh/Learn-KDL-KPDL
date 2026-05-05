@@ -1,5 +1,6 @@
 package com.example.demoKDLv1.Layer_Faker.FakerService;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -16,6 +17,7 @@ import com.example.demoKDLv1.Layer_Entity.VanPhongDaiDien.VanPhongDaiDien;
 import com.example.demoKDLv1.Layer_Entity.VanPhongDaiDien.VanPhongDaiDien_Service;
 import com.example.demoKDLv1.Layer_Faker.ConfigFaker.EntityConfig.AllEntityConfig;
 import com.example.demoKDLv1.Layer_Faker.FakerEntity.VanPhongDaiDienFaker;
+import com.example.demoKDLv1.ZZZ_Util.AddressCustomObject;
 
 
 // @Transactional
@@ -39,8 +41,27 @@ public class VanPhongDaiDienFS {
     @Autowired
     private KhachHangDuLichFS khdl_FS;
 
+    @Autowired
+    private FakeAdressName_FS fakeAdressName_FS;
+
     public VanPhongDaiDien createVpdd(){
-        VanPhongDaiDien vpdd1= VanPhongDaiDienFaker.createFakeVpdd(this.allEntityConfig);
+        // VanPhongDaiDien vpdd1= VanPhongDaiDienFaker.createFakeVpdd(this.allEntityConfig);
+
+        Long maTP= null;
+        String tenTP= null;
+        String diachivanphong= null;
+        String bang= null;
+        Timestamp thoigianlapvanphong= null;
+
+        AddressCustomObject address1 = this.fakeAdressName_FS.getAddress();
+
+        maTP = null;
+        tenTP = address1.getTenTp();
+        diachivanphong = address1.getDiaChiVanPhong();
+        bang = address1.getBang();
+        thoigianlapvanphong = this.allEntityConfig.getVpdd().getThoigianlapvanphong().getGiaTri();
+
+        VanPhongDaiDien vpdd1 = new VanPhongDaiDien(maTP, tenTP, diachivanphong, bang, thoigianlapvanphong);
 
         vpdd1 = this.vpdd_Service.createVpdd(vpdd1);
 

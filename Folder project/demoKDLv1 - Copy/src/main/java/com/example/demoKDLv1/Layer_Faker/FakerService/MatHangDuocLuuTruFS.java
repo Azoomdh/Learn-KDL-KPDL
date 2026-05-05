@@ -51,4 +51,17 @@ public class MatHangDuocLuuTruFS {
 
         return listMhdlt;
     }
+
+    public List<MatHangDuocLuuTru> createMhdlt_v2(CuaHang ch1, Integer soLuong){
+        List<MatHang> listMh = null;
+        List<MatHangDuocLuuTru> listMhdlt = null;
+
+        listMh = this.mh_Service.getRandomMathang(soLuong);
+        listMhdlt = MatHangDuocLuuTruFaker.createFakeMhdlt(ch1, listMh, allEntityConfig);
+
+        listMhdlt = this.mhdlt_Service.createAllMhdlt(listMhdlt);
+
+        return listMhdlt;
+    }
+
 }

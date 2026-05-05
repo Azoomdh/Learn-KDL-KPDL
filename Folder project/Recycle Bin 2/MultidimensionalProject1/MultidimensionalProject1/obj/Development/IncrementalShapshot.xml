@@ -1,0 +1,96 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>MultidimensionalProject1</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>rDuE9zDi/MjTT7yVDgQ5y9whSLw=19-Apr-26 8:24:30 PM19-Apr-26 2:12:38 AM</TimeStamp>
+        <ID>
+          <String>DemoKDLv2</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>1TVlmyMwiqpWQ9063UOQw3FySOo=19-Apr-26 5:46:58 PM19-Apr-26 2:13:19 AM</TimeStamp>
+        <ID>
+          <String>Demo KD Lv2</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>XwM0lmgldbFfyYLk9A01rmZU5kI=19-Apr-26 8:11:55 PM19-Apr-26 8:08:32 PM</TimeStamp>
+        <ID>
+          <String>MultidimensionalProject1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>IDVplBDKJI5tPwDXey6KH92ICvU=19-Apr-26 5:36:29 PM19-Apr-26 2:27:52 AM</TimeStamp>
+        <ID>
+          <String>Dim Mat Hang</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>/0M3W+tdslG+eO/vT+ToNRTaR88=19-Apr-26 5:38:38 PM19-Apr-26 2:27:52 AM</TimeStamp>
+        <ID>
+          <String>Dim Khach Hang</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>bDox10fqxDfHyISZfT9XsqUBs8Q=19-Apr-26 8:17:58 PM19-Apr-26 2:27:52 AM</TimeStamp>
+        <ID>
+          <String>Dim Thoi Gian</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>mCC9prN/2hmXLPxSFHCC9JW4KHs=19-Apr-26 8:18:50 PM19-Apr-26 2:28:45 AM</TimeStamp>
+        <ID>
+          <String>Dim Cua Hang</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>Qej1XJZc0nakq9nWuZZ4Sr8AoAM=19-Apr-26 8:31:03 PM19-Apr-26 2:27:52 AMSymCmIFzRxlbciUm07G/Pi+lrRs=19-Apr-26 6:04:30 PM19-Apr-26 2:27:52 AM</TimeStamp>
+        <ID>
+          <String>DemoKDLv2</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>HyYnOpFV/kD8ibXtO5Xaxh/l0dc=19-Apr-26 10:10:01 PM19-Apr-26 2:28:45 AMuDdEDSF/jkZNyLBz28bUx4ZBO1Q=19-Apr-26 2:28:45 AM19-Apr-26 2:28:45 AM</TimeStamp>
+        <ID>
+          <String>DemoKDLv2 1</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>Vr9Ijtm6/G+1L65OPebtv3pY0NM=19-Apr-26 8:11:55 PM19-Apr-26 2:10:34 AM</TimeStamp>
+      <ID>
+        <String>MultidimensionalProject1</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2026-04-19T15:10:20.153333Z</LastDeployed>
+</DeploymentSnapshot>

@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import com.example.demoKDLv1.Layer_Entity.KhachHang.KhachHang;
 import com.example.demoKDLv1.Layer_Entity.VanPhongDaiDien.VanPhongDaiDien;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -16,7 +17,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class KhachHangBuuDien extends KhachHang{
     
-
+    @Column(columnDefinition = "nvarchar(255)") // với SQL Server
     private String diachibuudien;
 
     public KhachHangBuuDien(){
@@ -39,7 +40,7 @@ public class KhachHangBuuDien extends KhachHang{
 
     public KhachHangBuuDien(KhachHang kh1, String diachibuudien){
         super(
-            kh1.getVersion(), 
+            // kh1.getVersion(), 
             kh1.getMaKH(), 
             kh1.getTenKH(),
             kh1.getNgaydathangdautien(), 

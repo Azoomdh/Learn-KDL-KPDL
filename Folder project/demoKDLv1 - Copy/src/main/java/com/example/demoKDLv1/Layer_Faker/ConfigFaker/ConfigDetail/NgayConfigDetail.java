@@ -26,5 +26,4 @@ public class NgayConfigDetail {
         this.modeReturnNow = modeReturnNow;
     }
 
-    
 }

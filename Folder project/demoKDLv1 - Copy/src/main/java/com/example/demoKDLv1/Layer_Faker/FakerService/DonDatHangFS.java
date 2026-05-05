@@ -32,8 +32,14 @@ public class DonDatHangFS {
 
         ddh1 = this.ddh_Service.createDondathang(ddh1);
 
+        // List<MatHangDuocDat> listMhdd = 
+        //     this.mhdd_FS.createMhdd(
+        //         ddh1, 
+        //         this.allEntityConfig.getDdh().getSoMhdd().getGiaTri()
+        //     );
+
         List<MatHangDuocDat> listMhdd = 
-            this.mhdd_FS.createMhdd(
+            this.mhdd_FS.createMhdd_v2(
                 ddh1, 
                 this.allEntityConfig.getDdh().getSoMhdd().getGiaTri()
             );

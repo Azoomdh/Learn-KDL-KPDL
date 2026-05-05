@@ -8,6 +8,7 @@ import java.util.Set;
 import com.example.demoKDLv1.Layer_Entity.DonDatHang.DonDatHang;
 import com.example.demoKDLv1.Layer_Entity.VanPhongDaiDien.VanPhongDaiDien;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,13 +28,14 @@ import lombok.Data;
 @Inheritance(strategy= InheritanceType.JOINED)
 public class KhachHang {
 
-    @Version
-    private Integer version;
+    // @Version
+    // private Integer version;
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long maKH;
 
+    @Column(columnDefinition = "nvarchar(255)") // với SQL Server
     private String tenKH;
 
     private Timestamp ngaydathangdautien;
@@ -52,7 +54,7 @@ public class KhachHang {
 
 
     public KhachHang(Long maKH, String tenKH, Timestamp ngaydathangdautien, VanPhongDaiDien vpdd) {
-        this.version = 0;
+        // this.version = 0;
         this.maKH = maKH;
         this.tenKH = tenKH;
         this.ngaydathangdautien = ngaydathangdautien;
@@ -71,13 +73,13 @@ public class KhachHang {
         this.setVpdd(kh2.getVpdd());
     }
 
-    public KhachHang(Integer version, Long maKH, String tenKH, Timestamp ngaydathangdautien, VanPhongDaiDien vpdd) {
-        this.version = version;
-        this.maKH = maKH;
-        this.tenKH = tenKH;
-        this.ngaydathangdautien = ngaydathangdautien;
-        this.vpdd = vpdd;
-    }
+    // public KhachHang(Integer version, Long maKH, String tenKH, Timestamp ngaydathangdautien, VanPhongDaiDien vpdd) {
+    //     this.version = version;
+    //     this.maKH = maKH;
+    //     this.tenKH = tenKH;
+    //     this.ngaydathangdautien = ngaydathangdautien;
+    //     this.vpdd = vpdd;
+    // }
 
     public void appendListDonDatHang(List<DonDatHang> listDondathang2){
         this.listDonDatHang.addAll(listDondathang2);

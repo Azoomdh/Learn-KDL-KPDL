@@ -8,6 +8,7 @@ import java.util.Set;
 import com.example.demoKDLv1.Layer_Entity.CuaHang.CuaHang;
 import com.example.demoKDLv1.Layer_Entity.KhachHang.KhachHang;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,17 +23,20 @@ import lombok.Data;
 @Data
 public class VanPhongDaiDien{
 
-    @Version
-    private Integer version;
+    // @Version
+    // private Integer version;
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long maTP;
 
+    @Column(columnDefinition = "nvarchar(255)") // với SQL Server
     private String tenTP;
 
+    @Column(columnDefinition = "nvarchar(255)") // với SQL Server
     private String diachivanphong;
 
+    @Column(columnDefinition = "nvarchar(255)") // với SQL Server
     private String bang;
 
     private Timestamp thoigianlapvanphong;
@@ -57,15 +61,15 @@ public class VanPhongDaiDien{
         this.thoigianlapvanphong = thoigianlapvanphong;
     }
 
-    public VanPhongDaiDien(Integer version, Long maTP, String tenTP, String diachivanphong, String bang,
-            Timestamp thoigianlapvanphong) {
-        this.version = version;
-        this.maTP = maTP;
-        this.tenTP = tenTP;
-        this.diachivanphong = diachivanphong;
-        this.bang = bang;
-        this.thoigianlapvanphong = thoigianlapvanphong;
-    }
+    // public VanPhongDaiDien(Integer version, Long maTP, String tenTP, String diachivanphong, String bang,
+    //         Timestamp thoigianlapvanphong) {
+    //     this.version = version;
+    //     this.maTP = maTP;
+    //     this.tenTP = tenTP;
+    //     this.diachivanphong = diachivanphong;
+    //     this.bang = bang;
+    //     this.thoigianlapvanphong = thoigianlapvanphong;
+    // }
 
     public VanPhongDaiDien() {
     }
