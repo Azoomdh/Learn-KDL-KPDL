@@ -5,6 +5,10 @@ class TapDuLieu {
 		// …
 	}
 
+	public ArrayList<String> getTapThuocTinh(){
+		// ...
+	}
+
 	public ArrayList<Object> getTapGiaTri(string tenCot){
 		// …
 	}
